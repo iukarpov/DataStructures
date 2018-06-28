@@ -133,7 +133,20 @@ namespace DataStructures
         }
         public void avltree_lookup(avltree tree, int value)
         {
-
+            if (root == null)
+            {
+                Console.WriteLine("Tree is empty");
+            }
+            DisplayTree(root);
+        }
+        private void DisplayTree(Node currentItem)
+        {
+            if (currentItem != null)
+            {
+                DisplayTree(currentItem.left);
+                Console.Write("({0}) ", currentItem.value);
+                DisplayTree(currentItem.right);
+            }
         }
         public void avltree_max(string key, int value)
         {
